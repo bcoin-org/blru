@@ -1,0 +1,44 @@
+{
+  "name": "blru",
+  "version": "0.0.1",
+  "description": "LRU cache for node.js",
+  "keywords": [
+    "cache",
+    "lru"
+  ],
+  "license": "MIT",
+  "repository": "git://github.com/bcoin-org/blru.git",
+  "homepage": "https://github.com/bcoin-org/blru",
+  "bugs": {
+    "url": "https://github.com/bcoin-org/blru/issues"
+  },
+  "author": "Christopher Jeffrey <chjjeffrey@gmail.com>",
+  "main": "./lib/blru.js",
+  "scripts": {
+    "browserify": "browserify -s blru lib/blru.js | uglifyjs -c > blru.js",
+    "clean": "rm -f blru.js",
+    "lint": "eslint lib/ test/ || exit 0",
+    "test": "mocha --reporter spec test/*-test.js",
+    "webpack": "webpack --config webpack.config.js"
+  },
+  "devDependencies": {
+    "babelify": "^8.0.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "browserify": "^14.5.0",
+    "eslint": "^4.14.0",
+    "mocha": "^4.0.1",
+    "uglifyjs-webpack-plugin": "^1.1.5",
+    "uglify-es": "^3.1.3",
+    "webpack": "^3.10.0"
+  },
+  "engines": {
+    "node": ">=7.6.0"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  }
+}
