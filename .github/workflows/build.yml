@@ -24,6 +24,10 @@ jobs:
     - name: Lint
       run: npm run lint
 
+    - name: Lint types
+      run: npm run lint-types
+
+
   test:
     name: Test
     runs-on: ${{ matrix.os }}
